@@ -5,3 +5,19 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+    authors = Author.create!([
+      {
+        name: "Mohsen",
+        genre: "Fiction",
+        bio: "Game designer"},
+      {
+        name: "Neshom",
+        genre: "Non-fiction",
+        bio: "Game lover and Game designer" }])
+
+      posts = Post.create!([
+          {
+            title: "Calm",
+            description: "Enjoy",
+            post_status: true,
+            author_id: authors.first.id }])
