@@ -1,2 +1,5 @@
-<h1><%= @post.title %></h1>
-<p><%= @post.description %></p>
+<%= title @post.title %>
+<h1>My Posts<%= @post.title %></h1>
+<p>My edit <%= last_updated @post %></p>
+My post description <%= @params%>
+<p>post desc <%= @post.description %></p>
