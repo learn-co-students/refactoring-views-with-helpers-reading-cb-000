@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 	end
 
 	def show
-		@post = Post.find(params[:id])
+		@post = Post.find_by(params[:id])
 	end
 
 	def new
@@ -18,12 +18,12 @@ class PostsController < ApplicationController
 	end
 
 	def update
-	  @post = Post.find(params[:id])
+	  @post = Post.find_by(params[:id])
 	  @post.update(params.require(:post))
 	  redirect_to post_path(@post)
 	end
 
 	def edit
-	  @post = Post.find(params[:id])
+	  @post = Post.find_by(params[:id])
 	end
 end
