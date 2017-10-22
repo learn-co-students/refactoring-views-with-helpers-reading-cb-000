@@ -1,5 +1,9 @@
 class AuthorsController < ApplicationController
   def show
-    @author = Author.find(params[:id])
+    if params[:id] == nil
+      @author = Author.find_or_create_by(id: 1)
+    else
+      @author = Author.find(params[:id])
+    end
   end
 end
