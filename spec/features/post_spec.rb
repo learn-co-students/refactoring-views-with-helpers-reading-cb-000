@@ -28,12 +28,13 @@ describe 'form' do
 
     visit edit_post_path(@post)
 
-    fill_in 'post[title]', with: "My edit"
+    fill_in 'post[title]', with: "my edit"
     fill_in 'post[description]', with: "My post description"
 
     click_on "Update Post"
 
-    expect(page).to have_content("My edit")
+    # titles are capitalized, check model
+    expect(page.body).to have_content("My Edit")
   end
 end
 
